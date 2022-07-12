@@ -40,6 +40,6 @@ dtest <- xgb.DMatrix(data = new_ts,label=ts_label)
 params <- list(booster = "gbtree", objective = "multi:softmax",num_class=14, eta=0.3, gamma=0, max_depth=6, min_child_weight=1, subsample=1, colsample_bytree=1)
 
 
-xgbcv <- xgb.cv( params = params, data = dtrain, nrounds = 100, nfold = 5, showsd = T, stratified = T, print.every.n = 10, early.stop.round = 20, maximize = F)
+xgbcv <- xgb.cv( params = params, data = dtrain, nrounds = 100, nfold = 5, showsd = T, stratified = T, print.every_n = 1, early_stopping_rounds = 20, maximize = F)
 
 
